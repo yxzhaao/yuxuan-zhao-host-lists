@@ -13,6 +13,8 @@ export const CPU_USAGE_QUERY = `timeseries cpuAvg = avg(dt.host.cpu.usage), by:{
   | fieldsAdd other = 100 - idle - ioWait - user - system - steal
 ], sourceField:hostId, lookupField:dt.entity.host, fields:{idle, ioWait, user, system, steal, other}`;
 
+export const RAM_USAGE_QUERY = `timeseries ramAvg=avg(cpu.ram),by:{dt.entity.host}`;
+
 export const getHostCpuUsageQuery = (hostId: string) => `timeseries {
     idle=avg(dt.host.cpu.idle),
     ioWait=avg(dt.host.cpu.iowait),
