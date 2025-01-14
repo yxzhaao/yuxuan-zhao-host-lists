@@ -2,7 +2,7 @@
   "environmentUrl": "https://wml40232.apps.dynatrace.com/",
   "app": {
     "name": "yuxuan-zhao-host-insights",
-    "version": "0.0.1",
+    "version": "0.0.3",
     "description": "A starting project with routing, fetching data, and charting",
     "id": "my.yuxuan.zhao.host.insights",
     "scopes": [

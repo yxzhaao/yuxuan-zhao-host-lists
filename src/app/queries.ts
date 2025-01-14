@@ -1,4 +1,4 @@
-export const CPU_USAGE_QUERY = `timeseries cpuAvg = avg(host.cpu.usage), by:{dt.entity.host, host.name}
+export const CPU_USAGE_QUERY = `timeseries cpuAvg = avg(host.cpu.usage), by:{dt.entity.host, host.name}, timeframe: "2025-01-14T09:20:00Z/2025-01-14T09:40:00Z"
 | dedup dt.entity.host
 | fieldsRename hostId = dt.entity.host, hostName = host.name
 | lookup [
