@@ -21,8 +21,9 @@ export const getHostCpuUsageQuery = (hostId: string) => `timeseries {
     system=avg(host.cpu.system),
     steal=avg(host.cpu.steal)
   },
+  timeframe: "2025-01-14T09:20:00Z/2025-01-14T09:40:00Z",
   filter:{dt.entity.host == "${hostId}"}
   | fieldsAdd other = 100 - idle[] - ioWait[] - user[] - system[] - steal[]`;
 
 export const getHostAvgCpuQuery = (hostId: string) =>
-  `timeseries cpuAvg = avg(host.cpu.usage), filter:{dt.entity.host == "${hostId}"}`;
+  `timeseries cpuAvg = avg(host.cpu.usage), timeframe: "2025-01-14T09:20:00Z/2025-01-14T09:40:00Z", filter:{dt.entity.host == "${hostId}"}`;
